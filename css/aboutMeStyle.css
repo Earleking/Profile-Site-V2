@@ -1,0 +1,32 @@
+.body-container {
+    display: grid;
+    grid-template-areas: 'a b' 'a c';
+    column-gap: 10%;
+    row-gap: 30px;
+    width: 80%;
+    left: 10%;
+    position: relative;
+}
+
+.main-text {
+    grid-area: a;
+    font-size: medium;
+}
+
+.sub-text {
+    transition: .75s;
+    padding: 30px;
+    background-color: #f1f1f1;
+}
+
+.sub-text:hover {
+    transform: scale(1.05);
+}
+
+.st1 {
+    grid-area: b;
+}
+
+.st2 {
+    grid-area: c;
+}
