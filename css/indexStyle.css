@@ -3,12 +3,9 @@ body {
     background-color: black;
 }
 .nav-bar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
     background-color: #4a4a4a;
     position: absolute;
     width: 80vw;
-    justify-content: space-evenly;
     overflow: hidden;
     height: 20px;
     margin: 0;
@@ -18,10 +15,19 @@ body {
     transition: 1s;
     border-bottom-left-radius: 35% 30px;
     border-bottom-right-radius: 35% 30px;
-
+    z-index: 1;
 }
 .nav-bar:hover {
     height: 60px;
+}
+
+.nav-bar-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    width: inherit;
+    height: 200px;
+    justify-content: space-evenly;
+
 }
 
 .nav-button {
@@ -50,20 +56,20 @@ body {
 
 .button {
     text-decoration: none;
-    color: black;
+    color: #0dacac;
     display: inline-block;
-    width: 40vw;
+    width: 100%;
     max-width: 200px;
     text-align: center;
-    border: 1px black solid;
+    border: 1px #0dacac solid;
     height: 50px;
     transition: .45s;
 }
 
 .button:hover {
     cursor: pointer;
-    color: white;
-    background-color: #5d5d5d;
+    /* color: white; */
+    background-color: #c3c3c3;
 }
 
 .button-text {
@@ -81,6 +87,7 @@ body {
     grid-template-columns: repeat(auto-fit, 200px);
     justify-content: space-evenly;
     row-gap: 25px;
+    margin-bottom: 50px;
 }
 
 .main-text {
@@ -92,4 +99,22 @@ body {
     color: #0dacac;
     font-family: 'Courier New', Courier, monospace;
     font-weight: normal;
+}
+
+@media (max-width:700px) {
+    .nav-bar {
+        padding-top: 25px;
+        height: 0;
+    }
+    .nav-bar:hover {
+        height: 200px;
+    }
+
+    .main-text {
+        top: 15vh;
+    }
+
+    .button-container {
+        top: 25vh;
+    }
 }
