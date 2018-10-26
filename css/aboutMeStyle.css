@@ -10,7 +10,8 @@ body {
     width: 90vw;
     position: relative;
     grid-template-areas: 'a b' 'c d';
-    grid-template-columns: 60% 40%; 
+    grid-template-columns: 55% 40%; 
+    column-gap: 5%;
 }
 
 .title {
