@@ -54,7 +54,6 @@ function snapTo(focusedPaneId) {
     var scale = 0.9;
     // set panes above it
     for(var i = +focusedPaneId + 1; i < panesArray.length; i ++) {
-        console.log(i);
         pane = document.getElementById(panesArray[i]);
         pane.style.top = '50%';
         pane.style.transform = 'translateY(' + (paneHeight * (i - focusedPaneId)) + 'px) translateY(-50%) scale(' + getScale(panesArray[i]) + ') ';
@@ -139,7 +138,8 @@ $('.projects-panel').mouseup((event) => {
         //it is a click
 
         var arrayId = event.target.id.split("-")[1] - 1;
-        if(arrayId != NaN) {
+
+        if(!isNaN(arrayId)) {
             snapTo(arrayId);
         }
         return;

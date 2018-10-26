@@ -39,13 +39,15 @@ body {
     display: grid;
     grid-template-areas: 'a a' 'b c';
     grid-template-columns: 35% 60%;
-    grid-template-rows: 50px auto;
+    grid-template-rows: 75px auto;
     column-gap: 5%;
 }
 
 .project-title {
     grid-area: a;
     text-align: center;
+    color: #0dacac;
+    font-size: 28px;
 }
 
 .project-techs {
@@ -63,6 +65,8 @@ body {
     display: grid;
     padding: 0;
     list-style: none;
+    row-gap: 15px;
+
 }
 .tech-item {
     list-style: none;
@@ -93,4 +97,12 @@ body {
     background: url('../static/images/vilemaw.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media(max-width:700px) {
+    .main {
+        grid-template-areas: 'b' 'a' 'c';
+        grid-template-columns: auto;
+        grid-template-rows: 50px 60vw auto;
+    }
 }
