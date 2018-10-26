@@ -19,7 +19,7 @@
 
 .nav-bar-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, 25%);
     width: inherit;
     height: 200px;
     justify-content: space-evenly;
@@ -32,12 +32,13 @@
     text-align: center;
     position: absolute;
     margin-top: 20px;
-    width: 200px;
+    width: 100%;
 }
 
 .nav-link {
     transition: 0.75s;
     color: white;
+    position: relative;
 }
 
 .nav-link:hover {
@@ -52,5 +53,8 @@
     }
     .nav-bar:hover {
         height: 200px;
+    }
+    .nav-bar-links {
+        grid-template-columns: repeat(auto-fit, 100%);
     }
 }

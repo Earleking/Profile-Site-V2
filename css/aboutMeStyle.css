@@ -33,6 +33,10 @@ body {
     grid-area: b;
 }
 
+.interests-subtitle {
+    font-size: 18px;
+}
+
 .interests-section {
     color: white;
     grid-area: d;
@@ -40,7 +44,7 @@ body {
 
 .interest-pop-up {
     display: none;
-    min-height: 40px;
+    /* min-height: 40px; */
     width: 150px;
     position: absolute;
     background-color: white;
