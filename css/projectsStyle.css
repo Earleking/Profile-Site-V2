@@ -81,8 +81,8 @@ body {
 /* Project pane stuff */
 #project-1 {
     background: url('../static/images/bot.png');
-    /* top: 50%;
-    transform: translateY(-50%); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #project-2 {
     background: url('../static/images/heimerbanner.jpg');
@@ -91,4 +91,6 @@ body {
 }
 #project-3 {
     background: url('../static/images/vilemaw.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
