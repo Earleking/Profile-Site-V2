@@ -66,12 +66,14 @@ function getScale(elementId) {
 
 setupPanes();
 
+
+// clicking
 $('.project-pane').click((event) => {
     snapTo(event.target.id.split("-")[1] - 1);
     console.log(event.target.id.split("-")[1]);
 });
 
-// drag
+// drag ffs why is this so much harder than clicking
 $('.projects-panel').mousedown((event) => {
     // enable mousemove event
     $('.projects-panel').on("mousemove");
@@ -94,7 +96,19 @@ $('.projects-panel').mousedown((event) => {
         $('.projects-panel').off("mousemove");
         // reset transition time
         $('.project-pane').css({transition: "0.75s"});
-    });
-    
+    }); 
+});
+
+$('.projects-panel').mouseup((event) => {
+    var ele = document.getElementById(panesArray[0]).getBoundingClientRect();
+    var center = ele.top + ((ele.bottom - ele.top) / 2);
+    var least = Math.abs(center - pageCenter);
+    for(var i in panesArray) {
+        ele = document.getElementById(panesArray[i]).getBoundingClientRect();
+        center = ele.top + ((ele.bottom - ele.top) / 2);
+        if (Math.abs(center - pageCenter) < least) {
+            least = Math.abs(center - pageCenter);
+        }
+    }
 });
 
