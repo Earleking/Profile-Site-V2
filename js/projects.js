@@ -27,12 +27,16 @@ function snapTo(focusedPaneId) {
     pane.style.top = '50%';
     pane.style.transform = 'translateY(-50%) scale(' + getScale(panesArray[focusedPaneId]) + ')';
 
+    // Highlight main pane
+    pane.style.boxShadow = "white 0px 0 20px 10px";
+
     var scale = 0.9;
     // set panes above it
     for(var i = focusedPaneId + 1; i < panesArray.length; i ++) {
         pane = document.getElementById(panesArray[i]);
         pane.style.top = '50%';
         pane.style.transform = 'translateY(-' + (paneHeight * (i - focusedPaneId)) + 'px) translateY(-50%) scale(' + getScale(panesArray[i]) + ') ';
+        pane.style.boxShadow = "";
     }
 
     // set panes below it
@@ -40,24 +44,31 @@ function snapTo(focusedPaneId) {
         pane = document.getElementById(panesArray[i]);
         pane.style.top = '50%';
         pane.style.transform = 'translateY(' + (paneHeight * (focusedPaneId - i)) + 'px) translateY(-50%) scale(' + getScale(panesArray[i]) + ') ';
+        pane.style.boxShadow = "";
     }
+
+    
+
 }
 
 function getScale(elementId) {
     var ele = document.getElementById(elementId).getBoundingClientRect();
     var center = ele.top + ((ele.bottom - ele.top) / 2);
 
-    var diff = Math.abs(center - pageCenter);
-    
+    var diff = Math.max(Math.abs(center - pageCenter), 1);
 
-    var t = 0.1 / ((diff + 100) / 1000)
-    return t * 1.1;
+    var t = 200 / diff;
+    // console.log(diff);
+    if(t < .8) t = 0.8;
+    if(t > 1.2) t = 1.2;
+    return 0.9;
 }
 
 setupPanes();
 
-$('#project-3').click(() => {
-    // snapTo(1);
+$('.project-pane').click((event) => {
+    snapTo(event.target.id.split("-")[1] - 1);
+    console.log(event.target.id.split("-")[1]);
 });
 
 // drag
@@ -71,9 +82,9 @@ $('.projects-panel').mousedown((event) => {
     // Move stuff on mousemove
     $('.projects-panel').mousemove((event)=> {
         $('.project-pane').css({top: '+=' + (event.pageY - lastY) + 'px'});
-        $('#project-1').css({transform: '+= scale(' + getScale('project-1') + ')'});
-        $('#project-2').css({transform: '+= scale(' + getScale('project-2') + ')'});
-        // $('#project-3').css({transform: 'scale(' + getScale('project-3') + ')'});
+        // $('#project-1').css({transform: '= scale(' + getScale('project-1') + ')'});
+        // $('#project-2').css({transform: '+= scale(' + getScale('project-2') + ')'});
+        // $('#project-3').css({transform: '+= scale(' + getScale('project-3') + ')'});
 
         lastY = event.pageY;
     });
