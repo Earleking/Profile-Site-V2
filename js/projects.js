@@ -4,10 +4,29 @@ var numbOfPanes = 3;
 // global vars
 var paneHeight, paneWidth, screenHeight, paneSpacing, pageCenter;
 var panesArray = [];
+var projectData;
+
+function loadJson() {
+    $.getJSON("../static/projectsData.json", {callback: "?"} , function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
+          items.push( "<li id='" + key + "'>" + val + "</li>" );
+        });
+       
+        $( "<ul/>", {
+          "class": "my-new-list",
+          html: items.join( "" )
+        }).appendTo( "body" );
+      });
+
+}
 
 function setupPanes() {
     var temp = document.getElementById("projects-panel").getBoundingClientRect();
     pageCenter = temp.top + ((temp.bottom - temp.top) / 2);
+    if(window.innerWidth < 800) {
+        alert("Uhh sorry this page only really works on desktop right now. Mobile coming soon");
+    }
     // setup pane array
     for(var i = 1; i <= numbOfPanes; i ++) {
         panesArray.push('project-' + i);
@@ -46,8 +65,11 @@ function snapTo(focusedPaneId) {
         pane.style.transform = 'translateY(' + (paneHeight * (focusedPaneId - i)) + 'px) translateY(-50%) scale(' + getScale(panesArray[i]) + ') ';
         pane.style.boxShadow = "";
     }
+}
 
-    
+function displayText(elementId) {
+    var ele = document.getElementById(elementId);
+    var label = ele.getAttribute("data-ele");
 
 }
 
@@ -64,7 +86,7 @@ function getScale(elementId) {
     return 0.9;
 }
 
-setupPanes();
+// loadJson();
 
 
 // clicking
@@ -110,5 +132,10 @@ $('.projects-panel').mouseup((event) => {
             least = Math.abs(center - pageCenter);
         }
     }
+    
 });
 
+$(document).ready(function () {
+    loadJson();
+    setupPanes();
+});

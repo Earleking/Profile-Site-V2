@@ -29,11 +29,51 @@ body {
     left: 10%;
     position: absolute;
     transition: .7s;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.projects-text-panel {
+    color: white;
+    display: grid;
+    grid-template-areas: 'a a' 'b c';
+    grid-template-columns: 35% 60%;
+    grid-template-rows: 50px auto;
+    column-gap: 5%;
+}
+
+.project-title {
+    grid-area: a;
+    text-align: center;
+}
+
+.project-techs {
+    grid-area: b;
+}
+
+.project-description {
+    grid-area: c;
+}
+
+.techs-list {
+    /* width: 100%; */
+    grid-template-columns: repeat(auto-fit, 100px);
+    justify-content: space-evenly;
+    display: grid;
+    padding: 0;
+    list-style: none;
+}
+.tech-item {
+    list-style: none;
+    text-align: center;
+    animation: shiftIn 1s;
+    padding: 0;
 }
 
 .main-title {
     grid-area: b;
     color: #0dacac;
+    font-size: 30px;
 }
 
 /* Project pane stuff */
@@ -44,6 +84,8 @@ body {
 }
 #project-2 {
     background: url('../static/images/heimerbanner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #project-3 {
     background: url('../static/images/vilemaw.jpg');

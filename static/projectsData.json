@@ -1,0 +1,17 @@
+{
+    "Riot-API": {
+        "Title": "Riot Games API Challenge",
+        "Techs": ["NodeJS", "HTML", "CSS", "Javascript", "MySQL", "Heroku"],
+        "Description": "This project was done at the end of 2017 for the Riot Games API Challenge. The challenge was to create a tool that would help introduce new players to some of the newer features in the game using Riot Games' API. Me and my partner created a two-part website. The first part was to analyze top players games and how they used these new features. We then used this data to help newer players find more optimal uses of these features. The other part was a more in-depth teaching section where we detailed what these new features do and the strategy behind when and why they are good. We finished second in our category."
+    },
+    "Earlebot": {
+        "Title": "Earle-Bot",
+        "Techs": ["NodeJS", "Discord"],
+        "Description": "This project is a bot for a popular social chat program (Discord). It reads the text messages that are sent in the chat and if they are sent in a specific format, in this case preceded by a percent(%), then they would be interpreted as a command. Using this any user can feed commands to my bot and have it do various tasks. Some of these tasks include playing music, searching imgur and reddit, as well as rolling a dice amoung other things. This was originally an earlier project of mine to help me get more familer with Node.js and since I have restarted on this project trying to integrate some of the better programming habits that I have picked up since my first version. "
+    },
+    "Profile-Site": {
+        "Title": "Profile Site",
+        "Techs": ["Github Sites", "CSS", "Javascript", "HTML"],
+        "Description": "Hey look! It's this site. I made this site hoping to impresses someone who might be looking at this site with my web skills. Hopefully I succeceded, maybe not. If I did it would be great if you could let me know. Similarly if my website falls flat I would be appreciative if you let me know where exactly I went wrong. My design sense isn't the best and I am always learning so if you could help me I would love that. I built this site on HTML, CSS and JS using jQuery. I did not use any website builder like Wix or Wordpress."
+    }
+}
