@@ -12,10 +12,10 @@
 <body>
     <div class="nav-bar">
         <div class="nav-bar-links">
+            <a href="../index.html" class="nav-link"><div class="nav-button">Home</div></a>
             <a href="aboutMe.html" class="nav-link"><div class="nav-button">About</div></a>
             <a href="projects.html" class="nav-link"><div class="nav-button">Projects</div></a>
             <a href="../static/Resume.pdf" class="nav-link" target="_blank"><div class="nav-button">Resume</div></a>
-            <a href="#" class="nav-link"><div class="nav-button">Contact</div></a>
         </div>
     </div>
     <div class="main">
@@ -27,6 +27,13 @@
             <div class="project-pane" id="project-1" data-label="Earlebot"></div>
             <div class="project-pane" id="project-2" data-label="Riot-API"></div>
             <div class="project-pane" id="project-3" data-label="Profile-Site"></div>
+            
+
+            <!-- Mobile Arrows -->
+            <div class="mobile-arrows">
+                <div class="arrow-left" onclick="previousProject()"></div>
+                <div class="arrow-right" onclick="nextProject()"></div>
+            </div>
         </div>
         <!-- TextDisplay Section -->
         <div class="projects-text-panel">
