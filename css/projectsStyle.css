@@ -20,7 +20,7 @@ body {
 .projects-panel {
     grid-area: a;
     position: relative;
-    background-color: #252525;
+    /* background-color: #252525; */
     overflow: hidden;
 }
 
