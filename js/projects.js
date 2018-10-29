@@ -27,9 +27,9 @@ function loadJson() {
 function setupPanes() {
     var temp = document.getElementById("projects-panel").getBoundingClientRect();
     pageCenter = temp.top + ((temp.bottom - temp.top) / 2);
-    if(window.innerWidth < 800) {
-        alert("Uhh sorry this page only really works on desktop right now. Mobile coming soon");
-    }
+    // if(window.innerWidth < 800) {
+    //     alert("Uhh sorry this page only really works on desktop right now. Mobile coming soon");
+    // }
     // setup pane array
     for(var i = 1; i <= numbOfPanes; i ++) {
         panesArray.push('project-' + i);
