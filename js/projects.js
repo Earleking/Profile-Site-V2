@@ -5,6 +5,7 @@ var numbOfPanes = 3;
 var paneHeight, paneWidth, screenHeight, paneSpacing, pageCenter;
 var panesArray = [];
 var projectData;
+var currentProject = 1;
 
 var panelClickTime; //Used for determining if mouse up on the projects pane is a click or drag
 
@@ -98,6 +99,19 @@ function getScale(elementId) {
     if(t < .8) t = 0.8;
     if(t > 1.2) t = 1.2;
     return 0.9;
+}
+
+function nextProject() {
+    currentProject = (currentProject + 1) % panesArray.length;
+    snapTo(currentProject);
+}
+
+function previousProject() {
+    if(currentProject == 0) {
+        currentProject = panesArray.length;
+    }
+    currentProject = (currentProject - 1);
+    snapTo(currentProject);
 }
 
 // loadJson();

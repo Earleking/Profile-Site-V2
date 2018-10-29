@@ -93,6 +93,25 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.mobile-arrows {
+    height: 100%;
+    width: 100%;
+}
+
+.arrow-left {
+    float: left;
+    background-color: blue;
+    height: 100%;
+    width: 10%;
+}
+
+.arrow-right {
+    float: right;
+    background-color: blue;
+    height: 100%;
+    width: 10%;
+}
+
 /* Project pane stuff */
 #project-1 {
     background: url('../static/images/bot.png');
@@ -115,5 +134,10 @@ body {
         grid-template-areas: 'b' 'a' 'c';
         grid-template-columns: auto;
         grid-template-rows: 50px 60vw auto;
+    }
+    .projects-text-panel {
+        grid-template-areas: 'a' 'b' 'c';
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
     }
 }
