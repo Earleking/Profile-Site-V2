@@ -75,6 +75,12 @@ body {
     padding: 0;
 }
 
+.techs-title {
+    font-size: 18px;
+    /* font-weight: bold; */
+    text-align: center;
+}
+
 .main-title {
     grid-area: b;
     color: #0dacac;
